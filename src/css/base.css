@@ -1,8 +1,9 @@
 body{
   padding: 0;
   margin: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Work Sans' ;
     background-color: #7ba4db;
+    font-weight: 400;
 }
 
 .container {
@@ -70,6 +71,7 @@ button {
     height: 400px;
     max-width: 1500px;
     overflow-x: hidden;
+    font-weight: 400;
 }
 
 .roulette {
@@ -81,6 +83,7 @@ button {
     transition-duration: 5s;
     transition-timing-function: ease-in-out;
     left:0;
+    font-weight: 400;
 }
 
 .roulette:after {
@@ -92,12 +95,14 @@ button {
     left: 50%;
     border-left: 2px dotted #ff0000;
     transform: translate(-50%);
+    font-weight: 400;
 }
 
 .roulette > div{
     width: 140px;
     min-width: 140px;
     float: left;
+    font-weight: 400;
 }
 
 .roulette > div > h3 {
@@ -106,6 +111,7 @@ button {
     text-align: center;
     margin: 0;
     font-size: 30px;
+    font-weight: 400;
 }
 
 .line{

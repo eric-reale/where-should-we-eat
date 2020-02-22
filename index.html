@@ -6,7 +6,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./src/css/base.css">
 </head>
@@ -14,7 +14,7 @@
   <div class="container">
     <center>
       <div>
-        <h1 class="header">Where should we eat?</h1>
+        <h1 class="header">Where should <span style="color:black">Centri NY</span> eat?</h1>
         <h2> LET'S FIND OUT</h2>
       </div>
     </center>
@@ -101,7 +101,9 @@
       chosenPlayerDiv.classList.add('winnerwinnerchickendinner');
       let chosenPlayer = (Math.ceil((offset/140)) % bets.length); // Takes the pixel offset amount divided by 140px per div, then takes mod to get remainder. Remainder is index-1 of bets array for winner.
       chosenPlayer = (bets[chosenPlayer-1]);
-      chosenPlayerDiv.innerHTML = chosenPlayer[0]
+      // console.log(chosenPlayer);
+      chosenPlayerDiv.innerHTML = chosenPlayer[0];
+      chosenPlayerDiv.style.color = chosenPlayer[1];
       setTimeout(function(){
         console.log(chosenPlayer)
         document.getElementById("winners").appendChild(chosenPlayerDiv);
