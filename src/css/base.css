@@ -5,33 +5,15 @@ body{
     background-color: #77bcc3;
 }
 
-#addTimer{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
 
 input[type=number]{
     width: 180px;
 }
 
-#minMax {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
 
-#arrow{
-    font-size: 40px;
-    margin: 0;
-}
-
-#minMax > div {
-    max-width: 50%;
-}
 
 .shotterudTitle{
-    font-size: 94px;
+    font-size: 64px;
     text-shadow: 3px 3px 1px yellow, 3px -3px 1px magenta, -3px 3px 1px cyan;
     z-index: 1;
 }
