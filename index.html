@@ -11,9 +11,10 @@
   <link rel="stylesheet" href="./src/css/base.css">
 </head>
  <body onload="init()">
+  <div class="container">
     <center>
       <div>
-        <h1 class="shotterudTitle">Where should we eat?</h1>
+        <h1 class="header">Where should we eat?</h1>
         <h2> LET'S FIND OUT</h2>
       </div>
     </center>
@@ -21,7 +22,7 @@
     <div class="rouletteContainer">
       <div class="line">
       </div>
-      <div id="fillMeUpDaddy" class="roulette">
+      <div id="rouletteWheel" class="roulette">
       </div>
     </div>
 
@@ -29,7 +30,7 @@
 
     <center>
       <div>
-        <button id="startButton" onclick="play()">Roll</button>
+        <button id="startButton" onclick="play()">EATIN' TIME</button>
       </div>
     </center>
 
@@ -41,63 +42,78 @@
     </div>
 
     <br><br>
+  </div>
 
   </body>
   <script>
-    const amountOfBoxes = 300; // update so that it's even distribution of chances rather than random up to 100
-    var order = [];
+    var bets =  [
+        ["player1", "#FFFFFF"],
+        ["player2", "#DDD000"],
+        ["player3", "#FFFFFF"],
+        ["player4", "#DDD000"],
+        ["player5", "#FFFFFF"],
+        ["player6", "#DDD000"],
+        ["player7", "#FFFFFF"],
+        ["player8", "#DDD000"],
+        ["player9", "#FFFFFF"],
+        ["player10", "#DDD000"],
+      ];
 
-    var colors= ['#FFFFFF', '#000000'];
-    var width = 80;
-    var bets =  [["player1", "#FFFFFF"],
-        ["player2", "#DDD000"]];
+    let prevOffset;
+
+    const amountOfBoxes = (bets.length * 30); // number in init() for i
+
+    // 140 pixels in each div
 
     function init(){
-      let roulette = document.getElementById("fillMeUpDaddy");
+      let roulette = document.getElementById("rouletteWheel");
       roulette.innerHTML = "";
 
-      for(let i = 0; i < amountOfBoxes; i++){
-          var randomPlayer = rand(0, bets.length)
+      for(let i = 0; i < 30; i++){
+        for(let j = 0; j < bets.length; j++) {
+          let eachResto = bets[j];
           var node = document.createElement("div");
           var h3 = document.createElement("h3");
-          h3.innerHTML = bets[randomPlayer][0];
-          h3.style.backgroundColor = bets[randomPlayer][1];
+          h3.innerHTML = eachResto[0];
+          h3.style.backgroundColor = eachResto[1];
           node.appendChild(h3);
           roulette.appendChild(node);
         }
+      }
     }
 
     function rand (min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
-    function play () {
-      //add sound if you want
+    function play (offset) {
+      if (offset === undefined) {
+        var offset = rand(7500, (amountOfBoxes*140-1000));
+        if (offset - prevOffset <= 3000 || prevOffset - offset <= 3000) {
+          offset = rand(7500, (amountOfBoxes*140-1000));
+        };
+      }
       //var audio = new Audio('spin.mp3');
       //audio.play();
-      var offset = rand(300, amountOfBoxes*140-180)+180;
-      document.getElementById("fillMeUpDaddy").style.left = -(offset-180) + "px";
+      document.getElementById("rouletteWheel").style.left = -(offset-180) + "px";
 
-      let chosenPlayer = document.createElement("div");
-      console.log(bets)
-      chosenPlayer.style.backgroundColor = bets[order[parseInt(offset/140)]][1];
-      chosenPlayer.innerHTML = bets[order[parseInt(offset/140)]][0];
+      let chosenPlayerDiv = document.createElement("div");
+      chosenPlayerDiv.classList.add('winnerwinnerchickendinner');
+      let chosenPlayer = (Math.ceil((offset/140)) % bets.length); // Takes the pixel offset amount divided by 140px per div, then takes mod to get remainder. Remainder is index-1 of bets array for winner.
+      chosenPlayer = (bets[chosenPlayer-1]);
+      chosenPlayerDiv.innerHTML = chosenPlayer[0]
       setTimeout(function(){
         console.log(chosenPlayer)
-        document.getElementById("winners").appendChild(chosenPlayer);
-        document.getElementById("fillMeUpDaddy").style.transitionDuration = "0s";
-        document.getElementById("fillMeUpDaddy").style.left = "0px";
-        setTimeout(function(){
-          document.getElementById("fillMeUpDaddy").style.transitionDuration = "5s";
-        }, 50)
+        document.getElementById("winners").appendChild(chosenPlayerDiv);
         }, 5500)
+      prevOffset = offset;
     }
 
-    // document.getElementById("max").addEventListener("keyup", function(event){
-    //   if(event.keyCode == 13){
-    //     addTimer();
-    //   }
-    // })
+    window.addEventListener("keydown", function(event){
+      if(event.keyCode == 13){
+        play();
+      }
+    })
   </script>
 
   <script src="./src/index.js"></script>

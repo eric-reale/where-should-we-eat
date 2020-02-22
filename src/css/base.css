@@ -5,15 +5,19 @@ body{
     background-color: #77bcc3;
 }
 
+.container {
+  margin: auto 10%;
+  height: 90vh;
+  overflow: hidden;
+}
 
 input[type=number]{
     width: 180px;
 }
 
 
-
-.shotterudTitle{
-    font-size: 64px;
+.header{
+    font-size: 60px;
     text-shadow: 3px 3px 1px yellow, 3px -3px 1px magenta, -3px 3px 1px cyan;
     z-index: 1;
 }
@@ -25,39 +29,32 @@ input {
 button {
     font-size: 48px;
 }
-ul{
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    width: 80%;
-}
-li, .winners > div {
-    float: center;
-    min-width: 10%;
-    list-style: none;
-    font-size: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    line-height: 55px;
-}
+
 
 .winners{
-    position: absolute;
+/*    position: absolute;
     left: 10%;
     right: 10%;
     overflow: hidden;
+    width: 80%;*/
+
     width: 80%;
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
 }
 
-.playerName:hover{
-    cursor: pointer;
-    filter: drop-shadow(16px 16px 20px red) invert(75%);
+
+.winnerwinnerchickendinner {
+
 }
+
 
 .rouletteContainer{
     position: absolute;
-    left: 15%;
-    right: 15%;
+    left: 10%;
+    right: 10%;
     height: 400px;
     max-width: 1500px;
     overflow-x: hidden;
