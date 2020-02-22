@@ -101,13 +101,16 @@
       //audio.play();
       document.getElementById("rouletteWheel").style.left = -(offset-180) + "px";
 
-      let chosenPlayerDiv = document.createElement("div");
+      let chosenPlayerDiv = document.createElement("a");
+      // let chosenPlayerLink = `<a></a>`;
+      // chosenPlayerDiv.insertAdjacentHTML('afterbegin', chosenPlayerLink);
       chosenPlayerDiv.classList.add('winnerwinnerchickendinner');
       let chosenPlayer = (Math.ceil((offset/140)) % bets.length); // Takes the pixel offset amount divided by 140px per div, then takes mod to get remainder. Remainder is index-1 of bets array for winner.
       chosenPlayer = (bets[chosenPlayer-1]);
       // console.log(chosenPlayer);
       chosenPlayerDiv.innerHTML = chosenPlayer[0];
       chosenPlayerDiv.style.color = chosenPlayer[1];
+      chosenPlayerDiv.href = chosenPlayer[2];
       setTimeout(function(){
         console.log(chosenPlayer)
         document.getElementById("winners").appendChild(chosenPlayerDiv);
