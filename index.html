@@ -99,8 +99,9 @@
           offset = rand(7500, (amountOfBoxes*140-1000));
         };
       }
-      //var audio = new Audio('spin.mp3');
-      //audio.play();
+      var audio = new Audio('./src/audio/spin.mp3');
+      // console.log(audio);
+      audio.play();
       document.getElementById("rouletteWheel").style.left = -(offset-180) + "px";
 
       // let chosenPlayerDiv = document.createElement("a");
