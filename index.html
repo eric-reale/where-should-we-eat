@@ -97,6 +97,9 @@
         var offset = rand(7500, (amountOfBoxes*140-1000));
         if (offset - prevOffset <= 3000 || prevOffset - offset <= 3000) {
           offset = rand(7500, (amountOfBoxes*140-1000));
+          if (offset - prevOffset <= 3000 || prevOffset - offset <= 3000) {
+            offset = rand(7500, (amountOfBoxes*140-1000));
+          };
         };
       }
       var audio = new Audio('./src/audio/spin.mp3');
