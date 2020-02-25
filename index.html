@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./src/css/base.css">
+  <link rel="shortcut icon" href=""> <!-- For favicon -->
 </head>
  <body onload="init()">
   <div class="container">
@@ -53,12 +54,15 @@
         ["Chipotle", "#AD3020", 'https://www.google.com/maps/place/Chipotle+Mexican+Grill/@40.7527041,-73.9907972,17z/data=!4m8!1m2!2m1!1schipotle!3m4!1s0x0:0xac01f1ef0fbf5392!8m2!3d40.7531445!4d-73.9888014'],
         ["Cava", "#F7B832",'https://www.google.com/maps/place/CAVA/@40.7540533,-73.9909152,17z/data=!4m13!1m7!2m6!1sfood!5m3!1e0!1e0!1e0!6e5!3m4!1s0x89c259bbc5dc7af1:0x66b5c615e3900b01!8m2!3d40.7528718!4d-73.9876742'],
         ["Pret A Manger", "#9F2D32", 'https://www.google.com/maps/place/Pret+A+Manger/@40.7525666,-73.9911348,16.37z/data=!4m8!1m2!2m1!1spret+a+manger!3m4!1s0x0:0x58ef78ddc428fdb8!8m2!3d40.7540883!4d-73.9885868'],
+        ["Sweetgreen", '#27625A', 'https://www.google.com/maps/place/sweetgreen/@40.754053,-73.9974866,15z/data=!4m8!1m2!2m1!1ssweetgreen!3m4!1s0x0:0x41c8e14f3aaf5d8d!8m2!3d40.7525014!4d-73.9871424'],
         ["Dig Inn", "#926256", 'https://www.google.com/maps/place/Dig+Inn/@40.7540533,-73.9909152,17z/data=!4m13!1m7!2m6!1sfood!5m3!1e0!1e0!1e0!6e5!3m4!1s0x89c259b3f37d7387:0x10d7e58617c4e888!8m2!3d40.7517621!4d-73.9898149'],
         ["Taco Dumbo", "#F9BAD1", 'https://www.google.com/maps/place/Taco+Dumbo/@40.7529967,-73.9935726,15.58z/data=!4m8!1m2!2m1!1staco+dumbo!3m4!1s0x0:0xca85ae6e2f318e00!8m2!3d40.752729!4d-73.987577'],
         ["Joe's Pizza", "#FDFBFD", 'https://www.google.com/maps/place/Joe\'s+Pizza/@40.7531779,-73.9951355,15.23z/data=!4m8!1m2!2m1!1sjoe\'s+pizza!3m4!1s0x0:0x3b67a41175949f55!8m2!3d40.7545841!4d-73.9869815'],
         ["Chick-fil-a", "#D13D28", 'https://www.google.com/maps/place/Chick-fil-A/@40.7540533,-73.9909152,17z/data=!4m13!1m7!2m6!1sfood!5m3!1e0!1e0!1e0!6e5!3m4!1s0x89c259abcaeb40c1:0x55103d15febe0abf!8m2!3d40.7517232!4d-73.9860817'],
         ["Potbelly", "#F6B132", 'https://www.google.com/maps/place/Potbelly+Sandwich+Shop/@40.7534894,-73.9935515,15.51z/data=!4m8!1m2!2m1!1spotbelly+sandwich+shop!3m4!1s0x0:0x8f5db7ceaf77fc21!8m2!3d40.7529789!4d-73.9889556'],
-        ["Moe's Southwest Grill", "#BA4023", 'https://www.google.com/maps/place/Moe\'s+Southwest+Grill/@40.7540533,-73.9909152,17z/data=!4m13!1m7!2m6!1sfood!5m3!1e0!1e0!1e0!6e5!3m4!1s0x89c259aa53502107:0x7cb5186c24eca248!8m2!3d40.752723!4d-73.986']
+        ["Moe's Southwest Grill", "#BA4023", 'https://www.google.com/maps/place/Moe\'s+Southwest+Grill/@40.7540533,-73.9909152,17z/data=!4m13!1m7!2m6!1sfood!5m3!1e0!1e0!1e0!6e5!3m4!1s0x89c259aa53502107:0x7cb5186c24eca248!8m2!3d40.752723!4d-73.986'],
+        ["Balade", "#FFFFFF", 'https://www.google.com/maps/place/Balade+Your+Way/@40.7540474,-74.0238586,13z/data=!4m8!1m2!2m1!1sbalade!3m4!1s0x0:0x4c00c0e83894c2f9!8m2!3d40.7524506!4d-73.9887142'],
+        ["Chopt", '#004C59', 'https://www.google.com/maps/place/Chopt+Creative+Salad+Co./@40.7609249,-73.9880231,15.78z/data=!4m8!1m2!2m1!1schopt!3m4!1s0x0:0xf39c33e6170915fa!8m2!3d40.7611302!4d-73.9811558']
         // ["Jollibee",'#CE3C38', 'https://www.google.com/maps/place/Jollibee/@40.7540533,-73.9909045,17z/data=!4m13!1m7!2m6!1sfood!5m3!1e0!1e0!1e0!6e5!3m4!1s0x89c2591868ce2b8b:0x24eaa9eb901bc24c!8m2!3d40.7557665!4d-73.9911646'],
         // ["Sammy's Halal", '#A52E21', 'https://www.google.com/maps/place/Sammy\'s+Halal/@40.7540533,-73.9909152,17z/data=!4m13!1m7!2m6!1sfood!5m3!1e0!1e0!1e0!6e5!3m4!1s0x89c259aa59ccea51:0x4b766f2bf32493dd!8m2!3d40.7526907!4d-73.9852976'],
         // ["Pax's Wholesome Foods", '#F7B632', 'https://www.google.com/maps/place/Pax+Wholesome+Foods/@40.7540533,-73.9909152,17z/data=!4m13!1m7!2m6!1sfood!5m3!1e0!1e0!1e0!6e5!3m4!1s0x89c259adab5d38ad:0x592f94dd9ff61487!8m2!3d40.7535985!4d-73.9919802'],
